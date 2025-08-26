@@ -1,0 +1,8 @@
+{
+  "server": {
+    "port": 5000
+  },
+  
+  "mongoURI": "mongodb+srv://Safae:Safae%26Azizi123@cluster0.bzczjev.mongodb.net/contactkeeper?retryWrites=true&w=majority",
+  "jwtSecret": "ton_secret_pour_jwt"
+}

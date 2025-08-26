@@ -1,0 +1,5 @@
+
+  {
+  "mongoURI": "mongodb://mongodb:27017/contactkeeper",
+  "jwtSecret": "secret"
+}

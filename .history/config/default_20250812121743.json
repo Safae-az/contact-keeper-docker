@@ -1,0 +1,9 @@
+{
+  "server": {
+    "port": 5000
+  },
+  
+  "mongoURI": "mongoURI": "mongodb://mongo:27017/contactkeeper",
+
+  "jwtSecret": "ton_secret_pour_jwt"
+}

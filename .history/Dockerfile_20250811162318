@@ -1,0 +1,21 @@
+FROM node:14
+
+WORKDIR /app
+
+# Copier package.json et package-lock.json en premier (pour tirer profit du cache)
+COPY package*.json ./
+
+# Installer les dépendances
+RUN npm install
+
+# Copier tout le reste du projet (y compris le dossier config)
+COPY . .
+
+# Exposer le port que ton serveur utilise
+EXPOSE 5000
+
+# Mettre NODE_ENV à production
+ENV NODE_ENV=production
+
+# Commande pour démarrer le serveur
+CMD ["node", "server.js"]

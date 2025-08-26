@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mongodb:
+    build:
+      context: ./database         # Le chemin vers ton dossier où se trouve le Dockerfile MongoDB
+      dockerfile: Dockerfile      # Nom exact du Dockerfile (sensible à la casse)
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  contact-backend:
+    image: contact-keeper-backend:latest
+    container_name: contact-backend
+    ports:
+      - "5003:5000"
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongodb:27017/contactkeeper
+    depends_on:
+      - mongodb
+
+  contact-frontend:
+    image: contact-keeper-frontend:latest
+    container_name: contact-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5003
+    depends_on:
+      - contact-backend
+
+volumes:
+  mongodb_data:
+
