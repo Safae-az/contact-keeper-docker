@@ -1,4 +1,4 @@
-Parfait Safae ! Voici un **README complet et professionnel en anglais**, qui combine **React refactor, Postman routes, Docker/Nginx, et déploiement automatisé**. Tu pourras le mettre directement sur GitHub ou LinkedIn :
+
 
 ---
 
@@ -225,6 +225,7 @@ server {
 
 
 ---
+
 
 
 
